@@ -12,6 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // ERROR HANDLING
         $errors = [];
 
+        if (if_username_special($username)) {
+            $errors["specialchar_user"] = "Username: can't use special characters";
+        }
         if (if_input_empty($username, $pswd)) {
             $errors["empty_input"] = "Fields missing input";
         }
@@ -45,7 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $_SESSION["last_regeneration"] = time(); 
 
-        header("Location: ../index.php?login=success");
+        // REDIRECT TO PAGE ON LOGIN
+        header("Location: ../main.php?login=success");
         $conn = null;
         $stmt = null;
 
