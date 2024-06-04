@@ -7,7 +7,7 @@ function show_username() {
     if (isset($_SESSION["user_id"])) {
         echo "Logged in as " . $_SESSION["user_username"];        
     } else {
-        echo "Guest";
+        echo "Currently signed out";
     }
 
 }
