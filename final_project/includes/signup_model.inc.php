@@ -24,13 +24,13 @@ function get_email(object $conn, string $email) {
 
 function set_user(object $conn, string $pswd, string $username, string $email) {
     $query = "INSERT INTO users (username, pswd, email) VALUES (:username, :pswd, :email);";
+    $stmt = $conn->prepare($query);
 
     $options = [
         'cost' => 12
     ];
     $hashedPswd = password_hash($pswd, PASSWORD_BCRYPT, $options);
 
-    $stmt = $conn->prepare($query);
     $stmt->bindParam(":username", $username);
     $stmt->bindParam(":pswd", $hashedPswd);
     $stmt->bindParam(":email", $email);
