@@ -2,6 +2,14 @@
 
 declare(strict_types= 1);
 
+function if_username_special(string $username) {
+    if (preg_match('/[^a-zA-Z0-9]/', $username)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 function if_input_empty(string $username, string $pswd) {
     if (empty($username) || empty($pswd)) {
         return true;
