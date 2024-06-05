@@ -6,6 +6,10 @@ require_once 'includes/posts_view.inc.php';
 require_once 'includes/posts_model.inc.php';
 
 $posts = display_posts($conn);
+
+$apiLink = 'https://api.quotable.io/random';
+$quote = json_decode(file_get_contents($apiLink));
+
 ?>
 
 <!DOCTYPE html>
@@ -53,5 +57,18 @@ $posts = display_posts($conn);
     </div>
     <?php endforeach; ?>
 
+<footer>
+    <div>
+        <h4><?php echo $quote->content;?></h4>
+        <h5><?php echo $quote->author;?></h5>
+        <div>
+            <?php foreach($quote->tags as $tag) { ?>
+                <span>
+                    # <?php echo $tag;?>
+                </span>
+            <?php } ?>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
