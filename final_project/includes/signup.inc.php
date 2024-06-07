@@ -13,11 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // ERROR HANDLING
         $errors = [];
 
-        // NEW CODE
         if (if_username_special($username)) {
             $errors["specialchar_user"] = "Username: can't use special characters";
-        }
-        //        
+        }      
         if (is_input_empty($username, $pswd, $email)) {
             $errors["empty_input"] = "Fields missing input";
         }
