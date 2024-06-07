@@ -1,1 +1,24 @@
+body {
+    font-family: Tahoma, Verdana, sans-serif;
+    max-width: 700px;
+}
 
+.form-error {
+    color: red;
+}
+
+.form-success {
+    color:green;
+}
+
+.index-header {
+    color: black;
+}
+
+#login-box {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    margin-left: 30px;
+    background-color: lightgray;
+}
