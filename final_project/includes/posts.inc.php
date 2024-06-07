@@ -1,11 +1,13 @@
 <?php
 require_once 'dbc.inc.php';
 
-if(!isset($_SESSION["user_id"])) {
+/* if(!isset($_SESSION["user_id"])) {
+
     header("Location: ../index.php");
     die();
-}
+} */
 
+// EXECUTE IF 'POST' BUTTON IS PRESSED
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $userId = $_POST["user_id"];
     $post = $_POST["post"];
