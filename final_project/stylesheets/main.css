@@ -1,1 +1,33 @@
+body {
+    color: black;
+    font-family: Tahoma, Verdana, sans-serif;
+}
 
+#login-box {
+    display: flex;
+    gap: 30px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    background-color: lightgray;
+}
+
+h4 {
+    font-size: 15px;
+}
+
+#create-post {
+    margin-left: 20px;
+}
+
+#posts {
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+footer {
+    background-color: lightslategray;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-bottom: 20px;
+}
